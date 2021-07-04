@@ -22,4 +22,19 @@ cv.imshow('War Horse',rescaleFrame(canny))
 dilated = cv.dilate(rescaleFrame(canny),(7,7),iterations=3)
 cv.imshow('Dilated', dilated)
 
+#eroded
+
+eroded = cv.erode(dilated,(7,7),iterations=3)
+cv.imshow('Eroded',eroded)
+
+#resize
+
+resized =cv.resize(eroded,(500,500),interpolation=cv.INTER_AREA)
+cv.imshow('Resized',resized)
+
+#cropping
+
+cropped = img[50:200,200:400]
+cv.imshow('Cropped',cropped)
+
 cv.waitKey(0)
